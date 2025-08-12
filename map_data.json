@@ -1,0 +1,35 @@
+{
+  "nodes": {
+    "turn1":    {"x": 0.1888, "y": 0.8536},
+    "turn2":         {"x": 0.1888, "y": 0.6927},
+    "lift":          {"x": 0.2424, "y": 0.6927},
+    "turn3":         {"x": 0.1888, "y": 0.6596},
+    "turn4":   {"x": 0.2256, "y": 0.4825},
+    "turn5":    {"x": 0.2256, "y": 0.2038},
+    "turn6": {"x": 0.4144, "y": 0.2038},
+    "labs":         {"x": 0.4144, "y": 0.1036},
+    "turn7": {"x": 0.7159, "y": 0.2038},
+    "room2":         {"x": 0.8446, "y": 0.2038},
+    "inter":   {"x": 0.7159, "y": 0.4846},
+    "inter2": {"x": 0.7159, "y": 0.6628},
+    "inter3":         {"x": 0.7159, "y": 0.8536},
+    "room3":      {"x": 0.8677, "y": 0.8536},
+    "qr1":       {"x": 0.1888, "y": 0.8919}
+  },
+  "edges": {
+    "qr1": ["turn1"],
+    "turn1": ["qr1", "turn2"],
+    "turn2": ["turn1", "lift","turn3"],
+    "lift": ["turn2"],
+    "turn3": ["turn2", "turn4","inter2"],
+    "turn4": ["turn3", "turn5","inter"],
+    "turn5": ["turn4", "turn6"],
+    "turn6": ["turn5", "labs","turn7"],
+    "labs": ["turn6"],
+    "turn7": ["turn6", "room2","inter"],
+    "room2": ["turn7"],
+    "inter": ["turn7", "turn4","inter2"],
+    "inter2": ["turn3", "inter"],
+    "inter3": ["inter2", "room3","turn1"]
+  }
+}
